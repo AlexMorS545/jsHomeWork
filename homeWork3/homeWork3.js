@@ -12,11 +12,11 @@ for (i = 0; i <= 10; i++) {
 
 // Задание 2
 
-const post = { 
+const post = {
 	author: "John", //вывести этот текст
 	postId: 23,
-	comments: [
-		{ userId: 10,
+	comments: [{
+			userId: 10,
 			userName: "Alex",
 			text: "lorem ipsum",
 			rating: {
@@ -39,12 +39,11 @@ const post = {
 console.log(post.author); // Вывод имени John
 console.log(post.comments[0].rating.dislikes); // Вывод количества dislikes
 console.log(post.comments[1].userId); // Вывод userId
-console.log(post.comments[1].text); //Вывод текста */
+console.log(post.comments[1].text); //Вывод текста 
 
 // Задание 3
 
-const products = [ 
-	{
+ const products = [{
 		id: 3,
 		price: 200,
 	},
@@ -96,16 +95,21 @@ const products = [
  * Функция выводит массив где есть фотографии продукта
  * @type {arr} 
  * */
-const result = products.filter(function (productPhoto) {
-	if (productPhoto.photos == 0) {
-		return false;
-	}
-	return productPhoto.photos;
-});
+const result = products.filter(productPhoto => 'photos' in productPhoto && productPhoto.photos.length > 0);
 console.log(result);
 
 // Сортировка товара по возрастанию в цене
-products.sort(function(a, b) {
+products.sort(function (a, b) {
 	return a.price - b.price;
 });
 console.log(products);
+
+// Задание 5
+
+for (i = 0; i <= 9; console.log(i++)) {}
+
+// Задание 6
+
+for (i = 'x'; i.length <= 20; i += 'x') {
+	console.log(i);
+}
