@@ -1,9 +1,23 @@
 'use strict';
 
+// Задание 1
+
+function splitNumber(num) {
+	if (!Number.isInteger(num) || num < 0 || num > 999) {
+		console.log('Число должно быть целым от 1 до 999!');
+		return {};
+	}
+	return {
+		units: num % 10,
+		tens: Math.floor(num / 10) % 10,
+		hundreds: Math.floor(num / 100) % 10,
+	};
+}
+
+console.log(splitNumber(56));
 // Задание 1.1
 
 // ES 5
-
 function Product (name, price) {
 	this.name = name;
 	this.price = price;
