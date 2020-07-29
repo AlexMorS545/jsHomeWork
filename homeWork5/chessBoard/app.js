@@ -26,14 +26,14 @@ let app = {
 	 */
 	insertPawns() {
 		// 6. получаем все теги td из 7 линии игрового поля, туда мы будем вставлять белые пешки
-		let whitePawnsRow = document.querySelectorAll(`[data-rownum = "2"]`);
+		let whitePawnsRow = document.querySelectorAll('[data-rownum = "2"]');
 		for (let i = 0; i < whitePawnsRow.length; i++) {
 			// 6.1 вставляем в текущий тег td белую пешку
 			whitePawnsRow[i].innerHTML = this.getFigure('pawn', 'whiteFigure');
 		}
 
 		// 6.2 получаем все теги td из 2 линии игрового поля, туда мы будем вставлять черные пешки
-		let blackPawnsRow = document.querySelectorAll(`[data-rownum = "7"]`);
+		let blackPawnsRow = document.querySelectorAll('[data-rownum = "7"]');
 		for (let i = 0; i < blackPawnsRow.length; i++) {
 			// 6.3 вставляем в текущий тег td черную пешку
 			blackPawnsRow[i].innerHTML = this.getFigure('pawn', 'blackFigure');
