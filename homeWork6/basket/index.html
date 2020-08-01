@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Basket</title>
+	<link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<header class="header">
+		<button class="btn-basket">Корзина</button>
+		<div class="modal-basket hidden">
+			<table class="table">
+				<thead>
+					<tr>
+						<th scope="col">ID</th>
+						<th scope="col">Имя</th>
+						<th scope="col">Цена</th>
+						<th scope="col">Количество</th>
+						<th scope="col">ID</th>
+					</tr>
+				</thead>
+				<tbody></tbody>
+				<tfoot>
+					<tr>
+						<th colspan="2" scope="row">Итог:</th>
+					</tr>
+					<td colspan="3">
+						<span class="summa">0</span>
+						<span class="sum-name">Rub</span>
+					</td>
+				</tfoot>
+			</table>
+		</div>
+	</header>
+	<div class="product-wrp">
+		<div class="product">
+			<span class="product-name">Товар 1</span>
+			<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRasSC6fJil8GpavGxT8lStvcEVJ02pghaA_A&usqp=CAU" alt="product photo">
+			<div>
+				<span class="product-price">400</span>
+				<span class="product-price-name">Rub</span>
+			</div>
+			<button type="button" class="btn toBasket" data-id="1" data-price="400" data-name="Товар 1">Купить</button>
+		</div>
+		<div class="product">
+			<span class="product-name">Товар 2</span>
+			<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQRPVzcSwiVoFnr447r6x9sicEWYM82ktfu0Q&usqp=CAU" alt="product photo">
+			<div>
+				<span class="product-price">1500</span>
+				<span class="product-price-name">Rub</span>
+			</div>
+			<button type="button" class="btn toBasket" data-id="2" data-price="1500" data-name="Товар 2">Купить</button>
+		</div>
+		<div class="product">
+			<span class="product-name">Товар 3</span>
+			<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTc5D-fFU5zL69P1yeLmmHlYfoCuciaz1HFlQ&usqp=CAU" alt="product photo">
+			<div>
+				<span class="product-price">854</span>
+				<span class="product-price-name">Rub</span>
+			</div>
+			<button type="button" class="btn toBasket" data-id="3" data-price="854" data-name="Товар 3">Купить</button>
+		</div>
+	</div>
+	<script src="app.js"></script>
+</body>
+</html>
