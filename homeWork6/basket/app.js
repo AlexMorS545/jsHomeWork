@@ -2,7 +2,7 @@
 
 const buttonEl = document.querySelector('.btn-basket');
 const modalWrap = document.querySelector('.modal-basket');
-const product = document.querySelector('.product');
+
 
 buttonEl.addEventListener('click', function () {
 	modalWrap.classList.toggle('hidden');
@@ -15,9 +15,74 @@ btnInBasket.forEach(function(button) {
 		let id = event.target.dataset.id;
 		let name = event.target.dataset.name;
 		let price = event.target.dataset.price;
+		basket.addProductToBasket({id: id, name: name, price: price});
 	});
 });
 
 const basket = {
+	
+	products: {},
+
+	addProductToBasket(product) {
+		this.addProduct(product);
+		this.productInBasket(product);
+		this.basketTotalPrice();
+		this.productRemove();
+	},
+
+	addProduct(product) {
+		if (this.products[product.id] == undefined) {
+			this.products[product.id] = {
+				price: product.price,
+				name: product.name,
+				count: 1
+			}
+		} else {
+			this.products[product.id].count++;
+		}
+	},
+	
+	productInBasket(product) {
+
+		const productAdd = 
+			`<tr>
+				<th scope="row">${product.id}</th>
+				<td>${product.name}</td>
+				<td>${product.price}</td>
+				<td data-id="${product.id}">1</td>
+				<td class="remove"><i class="fas fa-trash" data-id="${product.id}"></i></td>
+			</tr>`;
+
+		const itemInBasket = document.querySelector(`td[data-id="${product.id}"]`);
+
+		if (itemInBasket) {
+			itemInBasket.textContent++;
+		} else {
+			const tbody = document.querySelector('tbody');
+			tbody.insertAdjacentHTML("beforeend", productAdd);
+		}
+	},
+
+	basketTotalPrice() {
+		
+		let sum = 0;
+		
+		for (let i in this.products) {
+			sum += this.products[i].price * this.products[i].count;
+		}
+
+		document.querySelector('.summa').textContent = sum;
+	},
+	
+	productRemove() {
+		let btn = document.querySelectorAll('.fa-trash');
+
+		for (let i = 0; i < btn.length; i++) {
+
+			btn[i].addEventListener('click', (product) => {
+		
+			});
+		}
+	},
 
 };
