@@ -26,7 +26,6 @@ body {
 	background-color: #f55555;
 }
 .modal-basket {
-	width: 300px;
 	padding: 20px;
 	background-color: #ebebeb;
 	color: darkslategray;
@@ -36,7 +35,10 @@ body {
 	top: 60px;
 	right: 0;
 }
-
+.table td,
+.table th {
+	padding: 10px;
+}
 .product-wrp {
 	max-width: 1200px;
 	margin: 0 auto;

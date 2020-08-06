@@ -27,7 +27,7 @@ const basket = {
 		this.addProduct(product);
 		this.productInBasket(product);
 		this.basketTotalPrice();
-		this.productRemove();
+		this.addRemoveBtnsListeners();
 	},
 
 	addProduct(product) {
@@ -50,7 +50,7 @@ const basket = {
 				<td>${product.name}</td>
 				<td>${product.price}</td>
 				<td data-id="${product.id}">1</td>
-				<td class="remove"><i class="fas fa-trash" data-id="${product.id}"></i></td>
+				<td><i class="fas fa-trash" data-id="${product.id}"></i></td>
 			</tr>`;
 
 		const itemInBasket = document.querySelector(`td[data-id="${product.id}"]`);
@@ -74,15 +74,38 @@ const basket = {
 		document.querySelector('.summa').textContent = sum;
 	},
 	
-	productRemove() {
-		let btn = document.querySelectorAll('.fa-trash');
-
-		for (let i = 0; i < btn.length; i++) {
-
-			btn[i].addEventListener('click', (product) => {
-		
-			});
-		}
+	removeProduct(event) {
+		let id = event.srcElement.dataset.id;
+		this.removeProductFromObject(id);
+		this.removeProductFromBasket(id);
 	},
 
+	addRemoveBtnsListeners() {
+		let btns = document.querySelectorAll('.fa-trash');
+		for (let i = 0; i < btns.length; i++) {
+			btns[i].addEventListener('click', this.removeProductListener);
+		}
+	},
+	
+	removeProductListener(event) {
+		basket.removeProduct(event);
+		basket.basketTotalPrice();
+	},
+	
+	removeProductFromBasket(id) {
+		let countTd = document.querySelector(`td[data-id="${id}"]`);
+		if (countTd.textContent == 1) {
+			countTd.parentNode.remove();
+		} else {
+			countTd.textContent--;
+		}
+	},
+	
+	removeProductFromObject(id) {
+		if (this.products[id].count == 1) {
+			delete this.products[id];
+		} else {
+			this.products[id].count--;
+		}
+	}
 };
