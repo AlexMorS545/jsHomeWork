@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#01050c">
+	<meta name="msapplication-navbutton-color" content="#01050c">
+	<meta name="apple-mobile-web-app-status-bar-style" content="#01050c">
+	<title>AlexMorS</title>
+	<link rel="stylesheet" href="css/style.min.css">
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
+	<link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet">
+</head>
+<body>
+	<section class="main">
+		<video muted="true" autoplay="true" loop="true" src="video/video.mp4" class="video animate__animated"></video>
+		<header class="top-header container">
+			<div class="menu-box">
+				<div class="menu-burger">
+					<span class="line"></span>
+				</div>
+				<nav class="header-menu animate__animated hidden">
+					<button class="btn-project project1">parallax</button>
+					<button class="btn-project project2">проект 2</button>
+					<button class="btn-project project3">проект 3</button>
+				</nav>
+			</div>
+			<a href="index.html" class="logo-link">Logo</a>
+		</header>
+		<div class="box-page">
+			<p class="video-license">Video by Pressmaster from Pexels</з>
+		</div>
+		<div class="parallax-box animate__animated hidden">
+			<div class="parallax">
+				<div data-speed="10" class="parallax-item item1"></div>
+				<div data-speed="30" class="parallax-item item2"></div>
+				<div data-speed="40" class="parallax-item item3"></div>
+				<div data-speed="50" class="parallax-item item4"></div>
+				<div data-speed="70" class="parallax-item item6"></div>
+				<div data-speed="90" class="parallax-item item7"></div>
+				<div data-speed="100" class="parallax-item item8"></div>
+				<div class="list-box animate__animated hidden">
+					<div id="buy" class="header">
+						<h2>Список покупок</h2>
+						<input type="text" id="input" placeholder="Что ещё купить">
+						<span class="addBtn">добавить</span>
+					</div>
+					<ul class="list-product" id="list">
+						<li>Хлеб</li>
+						<li class="checked">Сахар</li>
+						<li>Молоко</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+	<script src="js/app.js"></script>
+	<script src="js/list.js"></script>
+</body>
+</html>
+
